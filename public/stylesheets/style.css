@@ -6,10 +6,7 @@ body {
     width: 100%;
 }
 
-li {
-    list-style: none;
-    margin: 20px;
-}
+/* Index setting */
 
 .container {
     display: flex;
@@ -20,48 +17,24 @@ li {
     margin: auto;
 }
 
-a, input[type=submit] {
-    color: #019875;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.4s;
-}
-
-a:hover {
-    color: black;
-}
-
 .title {
     margin-bottom: 20px;
 }
 
-th {
-    border-bottom: 2px solid #D8B493;
-    text-align: center;
+.notification {
+    margin: 5px 0;
+    align-self: flex-end;
+    animation: blink 2.5s linear infinite;
 }
-
-
-td {
-    padding: 5px 2px;
-}
-
-tr:nth-child(2n):not(:nth-child(4)):not(:nth-child(6)) {
-    background: #E7E7E7;
-}
-
-.password-container {
-    margin: 15%;
-}
-
+/* 
 .admin {
     align-self: flex-end;
-}
+} */
 
-.admin-passowrd {
-    padding: 10px;
-}
 
-a.button, input[type=submit], a.cancel-button {
+/* Button, Input Style */
+
+a.button, a.cancel-button, input[type=submit] {
     color: white;
     background: #019875;
     font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -72,15 +45,23 @@ a.button, input[type=submit], a.cancel-button {
     margin-left: 10px;
 }
 
-a.cancel-button {
-    background: #e4757a;
-    padding: 8px 5px 5px;
+a {
+    color: #019875;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.4s;
 }
+
 a.button-admin, a.cancel-button {
     position: absolute;
     margin-bottom: 20px;
     right: 5px;
     top: 5px;
+}
+
+a.cancel-button {
+    background: #e4757a;
+    padding: 8px 5px 5px;
 }
 
 a.button:hover, input[type=submit]:hover {
@@ -93,22 +74,49 @@ input[type=submit] {
     padding: 8px 5px 5px;
 }
 
-.note {
-    margin: 5px 0;
-    align-self: flex-end;
-    animation: blink 2.5s linear infinite;
+/* a:hover {
+    color: black;
+} */
+
+
+/* Table Style */
+
+th {
+    border-bottom: 2px solid #D8B493;
+    text-align: center;
+    margin: 5px;
+    padding: 10px 20px 10px 10px;
 }
 
-@keyframes blink {
-    25% {
-        opacity: .5;
-    }
-    50% {
-        opacity: 0;
-    }
-    75% {
-        opacity: .5;
-    }
+td {
+    padding: 15px 2px;
+}
+
+.lunch > td {
+    padding: 0 10px;
+}
+
+tr:nth-child(2n):not(:nth-child(4)):not(:nth-child(6)) {
+    background: #E7E7E7;
+}
+
+
+/* Password Pug Style */
+
+.password-container {
+    margin: 15%;
+}
+
+.admin-passowrd {
+    padding: 10px;
+}
+
+
+/* Update Pug Style */
+
+li {
+    list-style: none;
+    margin: 20px;
 }
 
 .add-server {
@@ -129,16 +137,24 @@ input[type=submit] {
     a.button {
         padding: 10px 14px 12px;
     }
-    th {
-        margin: 5px;
-        padding: 5px 20px 5px 10px;
-    }
     
     tr {
         min-height: 50px;
     }
-        
-    td {
-        padding: 5px 20px 5px 10px;
+    
+}
+
+
+/* Animation Style */
+
+@keyframes blink {
+    25% {
+        opacity: .5;
+    }
+    50% {
+        opacity: 0;
+    }
+    75% {
+        opacity: .5;
     }
 }
