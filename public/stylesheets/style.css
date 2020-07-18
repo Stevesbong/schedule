@@ -84,12 +84,12 @@ input[type=submit] {
 th {
     border-bottom: 2px solid #D8B493;
     text-align: center;
-    margin: 5px;
-    padding: 10px 20px 10px 10px;
+    /* padding: 10px 20px 10px 10px; */
+    padding: 10px 0;
 }
 
 td {
-    padding: 15px 2px;
+    padding: 15px 0;
 }
 
 .lunch > td {
@@ -123,10 +123,28 @@ li {
     margin-bottom: 20px;
 }
 
+.server-list {
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+}
+
 .server {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid #d6d6d6;
+    padding: 10px 15px;
+    transition: .2s;
+}
+
+.server:hover {
+    color: white;
+    background: #01b189;
+}
+
+.delete {
+    background: #ee3322!important;
 }
 
 
@@ -141,7 +159,6 @@ li {
     tr {
         min-height: 50px;
     }
-    
 }
 
 
