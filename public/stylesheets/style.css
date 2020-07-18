@@ -80,7 +80,10 @@ input[type=submit] {
 
 
 /* Table Style */
-
+table {
+    table-layout: fixed;
+    width: 100%;
+}
 th {
     border-bottom: 2px solid #D8B493;
     text-align: center;
@@ -89,6 +92,7 @@ th {
 }
 
 td {
+    width: 100%;
     padding: 5px 0;
 }
 
