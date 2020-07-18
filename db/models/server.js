@@ -1,5 +1,4 @@
 const Sequelize = require('sequelize');
-const { sequelize } = require('..');
 
 module.exports = sequelize => {
     class Schedule extends Sequelize.Model {}
@@ -7,8 +6,9 @@ module.exports = sequelize => {
         name: {
             type: Sequelize.STRING
         },
-        authentication: {
-            type: Sequelize.BOOLEAN
+        password: {
+            type: Sequelize.INTEGER,
+            defaultValue: 4321
         }
     }, { sequelize });
     

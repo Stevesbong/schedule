@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../db');
-const { Schedulce } = db.models;
+const { Schedule } = db.models;
 
 function asyncHandler(callback) {
     return async( req, res, next ) => {
@@ -15,6 +15,23 @@ function asyncHandler(callback) {
 
 router.get('/', asyncHandler( async( req, res ) => {
     res.render('index')
+}));
+
+router.get('/login', asyncHandler( async( req, res ) => {
+    res.render('password')
+}))
+
+router.post('/admin', asyncHandler( async(req, res ) => {
+    console.log('hi')
+    console.log(req.body.admin)
+    const admin = await Schedule.findOne({
+        where: { password: req.body.admin }
+    })
+    if(admin) {
+        res.render('update-schedule')
+    } else {
+        res.redirect('/')
+    }
 }))
 
 module.exports = router;
