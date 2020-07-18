@@ -14,7 +14,5 @@ app.use(bodyParser.urlencoded( { extended:false } ) );
 require('./routes/index')(app);
 app.use('/schedules', schedules);
 
-
-
 let port = process.env.port ? process.env.PORT : 3000;
 app.listen( port, () => console.log(`listening port on ${port}`))
