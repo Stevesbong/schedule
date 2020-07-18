@@ -90,7 +90,6 @@ th {
     border-bottom: 2px solid #D8B493;
     text-align: center;
     padding: 10px 15px;
-    /* padding: 10px 0; */
 }
 
 td {
@@ -121,7 +120,7 @@ tr:nth-child(2n):not(:nth-child(4)):not(:nth-child(6)) {
 
 li {
     list-style: none;
-    margin: 20px;
+    margin: 10px;
 }
 
 .add-server {
@@ -131,7 +130,9 @@ li {
 .server-list {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     padding: 0px;
+    margin: 0 auto
 }
 
 .server {
