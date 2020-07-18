@@ -84,7 +84,7 @@ input[type=submit] {
 th {
     border-bottom: 2px solid #D8B493;
     text-align: center;
-    padding: 10px;
+    padding: 10px 15px;
     /* padding: 10px 0; */
 }
 
