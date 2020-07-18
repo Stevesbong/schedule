@@ -2,7 +2,7 @@ extends layout.pug
 
 block content
     h1 Edit Schedule
-        a.button(href="/" style={'background-color': '#e4757a'}) Exit
+        a.button.cancel-button(href="/" style={'background-color': '#e4757a'}) Exit
     table
         thead
             tr
@@ -114,3 +114,16 @@ block content
                 td 
                 td Young
                 td Howard
+
+    h3 Add Server
+    form.add-server(action="/schedules/new", method="post")
+        input(name="name", type="text", id="name", placeholder="Server Name")
+        input(type="submit", value="Submit", id="submit-admin")
+
+    ul(style={'padding':'0px'})
+        strong Servers Name
+        each server in servers
+            if server.name !== 'admin'
+                li.server #{server.name}
+                    form(action="/schedules/" + server.id + "/delete", method="post")
+                        input(type="submit" value="Delete")

@@ -1,10 +1,13 @@
 extends layout.pug
 
 block content
-    h1.title Maru Schedule  
-        a.button(href="/schedules/login") Admin
-    //- p.admin
-    //-     a.button(href="/schdule/login") Admin
+    h1.title Maru Schedule
+        a.button.button-admin(href="/schedules/login") Admin
+    
+    p.note
+        strong(style={'color': '#e4757a', 'font-size': '1.2em'}) Friday and Saturday Open: 11:40 am
+    p.note
+        strong(style={'color': '#e4757a', 'font-size': '1.2em'}) Friday and Saturday Second: 12:00 am
     table
         thead
             tr
@@ -116,8 +119,3 @@ block content
                 td 
                 td Young
                 td Howard
-    
-    p.note
-        strong(style={'color': '#e4757a', 'font-size': '1.2em'}) Friday and Saturday Open: 11:40 am
-    p.note
-        strong(style={'color': '#e4757a', 'font-size': '1.2em'}) Friday and Saturday Second: 12:00 am
