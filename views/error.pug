@@ -1,0 +1,15 @@
+extends layout.pug
+
+block content
+    .container
+        if err
+            h1 Error status: #{err.status}
+            br
+            p= err.message
+            pre= err.stack
+        else
+            h1 Book does not exist.
+        br
+        p Oooops! It looks like there is no book.
+        p
+            a(class="button" href="/books") Home

@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../db');
-const { render } = require('pug');
 const { Schedule } = db.models;
 
 function asyncHandler(callback) {
@@ -9,7 +8,7 @@ function asyncHandler(callback) {
         try{
             await callback(req, res, next);
         } catch(e) {
-            res.status(500).send(e)
+            res.status(500).render('error');
         }
     }
 }
@@ -30,7 +29,7 @@ router.get('/login', asyncHandler( async( req, res ) => {
 // Enter Admin Page
 router.get('/admin', asyncHandler( async( req, res ) => {
     const servers = await Schedule.findAll();
-    console.log(servers)
+    // console.log(servers)
     res.render('update-schedule', { servers })
 }))
 

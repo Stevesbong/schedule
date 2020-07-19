@@ -153,6 +153,11 @@ li {
     background: #ee3322!important;
 }
 
+@media (max-width: 410px) {
+    body {
+        font-size: 0.58em;
+    }
+}
 
 @media (min-width: 765px) {
     .container {
