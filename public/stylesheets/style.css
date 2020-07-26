@@ -153,6 +153,24 @@ li {
     background: #ee3322!important;
 }
 
+.server-input {
+    width: 65%;
+}
+
+.schedule-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.schedule-submit {
+    width: 10%;
+    align-self: flex-end;
+    margin: 20px;
+    padding: 10px 5px;
+    font-size: 1.08em;
+}
+
 @media (max-width: 410px) {
     body {
         font-size: 0.58em;

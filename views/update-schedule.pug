@@ -3,117 +3,161 @@ extends layout.pug
 block content
     h1 Edit Schedule
         a.button.cancel-button(href="/" style={'background-color': '#e4757a'}) Exit
-    table
-        thead
-            tr
-                th &emsp;&emsp;&emsp;
-                th Sun
-                th Mon
-                th Tues
-                th Wed
-                th Thur
-                th Fri
-                th Sat
-        tbody
-            tr
-                td 11:10 am
-                td 
-                td Howard
-                td Howard
-                td Ushma
-                td Ushma
-                td Ushma
-                td Steve
-            tr
-                td 12:00 am
-                td 
-                td Young
-                td Young
-                td Dianna
-                td Dianna
-                td Howard
-                td Young
-            tr.lunch
-                td &emsp;&emsp;&emsp;
-                td &emsp;&emsp;&emsp;
-                td &emsp;&emsp;&emsp;
-                td &emsp;&emsp;&emsp;
-                td &emsp;&emsp;&emsp;
-                td &emsp;&emsp;&emsp;
-                td &emsp;&emsp;&emsp;
-                td &emsp;&emsp;&emsp;
-            tr.lunch
-                td &emsp;L&emsp;
-                td &emsp;U&emsp;
-                td &emsp;N&emsp;
-                td &emsp;C&emsp;
-                td &emsp;H&emsp;
-                td &emsp;&emsp;&emsp;
-                td &emsp;&emsp;&emsp;
-                td &emsp;&emsp;&emsp;
-            tr.lunch
-                td &emsp;&emsp;&emsp;
-                td &emsp;&emsp;&emsp;
-                td &emsp;&emsp;&emsp;
-                td &emsp;&emsp;&emsp;
-                td &emsp;&emsp;&emsp;
-                td &emsp;&emsp;&emsp;
-                td &emsp;&emsp;&emsp;
-                td &emsp;&emsp;&emsp;
-            tr.lunch
-                td &emsp;&emsp;&emsp;
-                td &emsp;&emsp;&emsp;
-                td &emsp;&emsp;&emsp;
-                td &emsp;B&emsp;
-                td &emsp;R&emsp;
-                td &emsp;E&emsp;
-                td &emsp;A&emsp;
-                td &emsp;K&emsp;
-            tr.lunch
-                td &emsp;&emsp;&emsp;
-                td &emsp;&emsp;&emsp;
-                td &emsp;&emsp;&emsp;
-                td &emsp;&emsp;&emsp;
-                td &emsp;&emsp;&emsp;
-                td &emsp;&emsp;&emsp;
-                td &emsp;&emsp;&emsp;
-                td &emsp;&emsp;&emsp;
-            tr
-                td 4:40 pm
-                td Ushma
-                td Howard
-                td Howard
-                td Ushma
-                td Ushma
-                td Ushma
-                td Steve
-            tr
-                td 5:00 pm
-                td Young
-                td Young
-                td Young
-                td Dianna
-                td Dianna
-                td Steve
-                td Young
-            tr
-                td 5:15 pm
-                td Dianna
-                td 
-                td 
-                td 
-                td Young
-                td Howard
-                td Dianna
-            tr
-                td 5:30 pm
-                td Howard
-                td 
-                td 
-                td 
-                td 
-                td Young
-                td Howard
+    form(action="", class="schedule-form")
+        table
+            thead
+                tr
+                    th &emsp;&emsp;&emsp;
+                    th Sun
+                    th Mon
+                    th Tues
+                    th Wed
+                    th Thur
+                    th Fri
+                    th Sat
+            tbody
+                tr
+                    td 11:10 am
+                    td 
+                        input(type="hidden" value="")
+                    td
+                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
+                    td 
+                        input(name="tues-open", type="text", id="tues-open", class="server-input" placeholder="Server Name")
+                    td 
+                        input(name="wed-open", type="text", id="wed-open", class="server-input" placeholder="Server Name")
+                    td 
+                        input(name="thur-open", type="text", id="thur-open", class="server-input" placeholder="Server Name")
+                    td 
+                        input(name="fri-open", type="text", id="fri-open", class="server-input" placeholder="Server Name")
+                    td 
+                        input(name="sat-open", type="text", id="sat-open", class="server-input" placeholder="Server Name")
+                tr
+                    td 12:00 am
+                    td 
+                        input(type="hidden" value="")
+                    td 
+                        input(name="mon-close", type="text", id="mon-close", class="server-input" placeholder="Server Name")
+                    td 
+                        input(name="tues-close", type="text", id="tues-close", class="server-input" placeholder="Server Name")
+                    td 
+                        input(name="wed-close", type="text", id="wed-close", class="server-input" placeholder="Server Name")
+                    td 
+                        input(name="thur-close", type="text", id="thur-close", class="server-input" placeholder="Server Name")
+                    td 
+                        input(name="fri-close", type="text", id="fri-close", class="server-input" placeholder="Server Name")
+                    td 
+                        input(name="sat-close", type="text", id="sat-close", class="server-input" placeholder="Server Name")
+                tr.lunch
+                    td &emsp;&emsp;&emsp;
+                    td &emsp;&emsp;&emsp;
+                    td &emsp;&emsp;&emsp;
+                    td &emsp;&emsp;&emsp;
+                    td &emsp;&emsp;&emsp;
+                    td &emsp;&emsp;&emsp;
+                    td &emsp;&emsp;&emsp;
+                    td &emsp;&emsp;&emsp;
+                tr.lunch
+                    td &emsp;L&emsp;
+                    td &emsp;U&emsp;
+                    td &emsp;N&emsp;
+                    td &emsp;C&emsp;
+                    td &emsp;H&emsp;
+                    td &emsp;&emsp;&emsp;
+                    td &emsp;&emsp;&emsp;
+                    td &emsp;&emsp;&emsp;
+                tr.lunch
+                    td &emsp;&emsp;&emsp;
+                    td &emsp;&emsp;&emsp;
+                    td &emsp;&emsp;&emsp;
+                    td &emsp;&emsp;&emsp;
+                    td &emsp;&emsp;&emsp;
+                    td &emsp;&emsp;&emsp;
+                    td &emsp;&emsp;&emsp;
+                    td &emsp;&emsp;&emsp;
+                tr.lunch
+                    td &emsp;&emsp;&emsp;
+                    td &emsp;&emsp;&emsp;
+                    td &emsp;&emsp;&emsp;
+                    td &emsp;B&emsp;
+                    td &emsp;R&emsp;
+                    td &emsp;E&emsp;
+                    td &emsp;A&emsp;
+                    td &emsp;K&emsp;
+                tr.lunch
+                    td &emsp;&emsp;&emsp;
+                    td &emsp;&emsp;&emsp;
+                    td &emsp;&emsp;&emsp;
+                    td &emsp;&emsp;&emsp;
+                    td &emsp;&emsp;&emsp;
+                    td &emsp;&emsp;&emsp;
+                    td &emsp;&emsp;&emsp;
+                    td &emsp;&emsp;&emsp;
+                tr
+                    td 4:40 pm
+                    td 
+                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
+                    td 
+                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
+                    td 
+                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
+                    td 
+                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
+                    td 
+                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
+                    td 
+                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
+                    td 
+                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
+                tr
+                    td 5:00 pm
+                    td 
+                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
+                    td 
+                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
+                    td 
+                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
+                    td 
+                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
+                    td 
+                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
+                    td 
+                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
+                    td 
+                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
+                tr
+                    td 5:15 pm
+                    td
+                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
+                    td 
+                        input(type="hidden" value="")
+                    td 
+                        input(type="hidden" value="")
+                    td 
+                        input(type="hidden" value="")
+                    td 
+                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
+                    td 
+                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
+                    td 
+                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
+                tr
+                    td 5:30 pm
+                    td 
+                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
+                    td 
+                        input(type="hidden" value="")
+                    td 
+                        input(type="hidden" value="")
+                    td 
+                        input(type="hidden" value="")
+                    td 
+                        input(type="hidden" value="")
+                    td 
+                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
+                    td 
+                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
+        input(type="submit", value="Submit", id="submit-admin", class="schedule-submit")
 
     h3 Add Server
     form.add-server(action="/schedules/new", method="post")
