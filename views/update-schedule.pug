@@ -3,7 +3,7 @@ extends layout.pug
 block content
     h1 Edit Schedule
         a.button.cancel-button(href="/" style={'background-color': '#e4757a'}) Exit
-    form(action="", class="schedule-form")
+    form(action="/schedules/update", class="schedule-form", method="post")
         table
             thead
                 tr
@@ -18,36 +18,14 @@ block content
             tbody
                 tr
                     td 11:10 am
-                    td 
-                        input(type="hidden" value="")
-                    td
-                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
-                    td 
-                        input(name="tues-open", type="text", id="tues-open", class="server-input" placeholder="Server Name")
-                    td 
-                        input(name="wed-open", type="text", id="wed-open", class="server-input" placeholder="Server Name")
-                    td 
-                        input(name="thur-open", type="text", id="thur-open", class="server-input" placeholder="Server Name")
-                    td 
-                        input(name="fri-open", type="text", id="fri-open", class="server-input" placeholder="Server Name")
-                    td 
-                        input(name="sat-open", type="text", id="sat-open", class="server-input" placeholder="Server Name")
+                    each name, index in data.lunch.first
+                        td
+                            input(name=`lFirst${index}`, type="text", id="first", class="server-input", placeholder="Server Name", value=name)
                 tr
                     td 12:00 am
-                    td 
-                        input(type="hidden" value="")
-                    td 
-                        input(name="mon-close", type="text", id="mon-close", class="server-input" placeholder="Server Name")
-                    td 
-                        input(name="tues-close", type="text", id="tues-close", class="server-input" placeholder="Server Name")
-                    td 
-                        input(name="wed-close", type="text", id="wed-close", class="server-input" placeholder="Server Name")
-                    td 
-                        input(name="thur-close", type="text", id="thur-close", class="server-input" placeholder="Server Name")
-                    td 
-                        input(name="fri-close", type="text", id="fri-close", class="server-input" placeholder="Server Name")
-                    td 
-                        input(name="sat-close", type="text", id="sat-close", class="server-input" placeholder="Server Name")
+                    each name, index in data.lunch.second
+                        td
+                            input(name=`lSecond${index}`, type="text", id="second", class="server-input", placeholder="Server Name", value=name)
                 tr.lunch
                     td &emsp;&emsp;&emsp;
                     td &emsp;&emsp;&emsp;
@@ -95,79 +73,37 @@ block content
                     td &emsp;&emsp;&emsp;
                 tr
                     td 4:40 pm
-                    td 
-                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
-                    td 
-                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
-                    td 
-                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
-                    td 
-                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
-                    td 
-                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
-                    td 
-                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
-                    td 
-                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
+                    each name, index in data.dinner.first
+                        td
+                            input(name=`dFirst${index}`, type="text", id="first", class="server-input", placeholder="Server Name", value=name)
                 tr
                     td 5:00 pm
-                    td 
-                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
-                    td 
-                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
-                    td 
-                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
-                    td 
-                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
-                    td 
-                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
-                    td 
-                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
-                    td 
-                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
+                    each name, index in data.dinner.second
+                        td
+                            input(name=`dSecond${index}`, type="text", id="second", class="server-input", placeholder="Server Name", value=name)
                 tr
                     td 5:15 pm
-                    td
-                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
-                    td 
-                        input(type="hidden" value="")
-                    td 
-                        input(type="hidden" value="")
-                    td 
-                        input(type="hidden" value="")
-                    td 
-                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
-                    td 
-                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
-                    td 
-                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
+                    each name, index in data.dinner.third
+                        td
+                            input(name=`dThird${index}`, type="text", id="third", class="server-input", placeholder="Server Name", value=name)
                 tr
                     td 5:30 pm
-                    td 
-                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
-                    td 
-                        input(type="hidden" value="")
-                    td 
-                        input(type="hidden" value="")
-                    td 
-                        input(type="hidden" value="")
-                    td 
-                        input(type="hidden" value="")
-                    td 
-                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
-                    td 
-                        input(name="mon-open", type="text", id="mon-open", class="server-input" placeholder="Server Name")
+                    each name, index in data.dinner.fourth
+                        td
+                            input(name=`dFourth${index}`, type="text", id="fourth", class="server-input", placeholder="Server Name", value=name)
+
+
         input(type="submit", value="Submit", id="submit-admin", class="schedule-submit")
 
-    h3 Add Server
-    form.add-server(action="/schedules/new", method="post")
-        input(name="name", type="text", id="name", placeholder="Server Name")
-        input(type="submit", value="Submit", id="submit-admin")
+    //- h3 Add Server
+    //- form.add-server(action="/schedules/new", method="post")
+    //-     input(name="name", type="text", id="name", placeholder="Server Name")
+    //-     input(type="submit", value="Submit", id="submit-admin")
 
-    strong Servers Name
-    ul.server-list
-        each server in servers
-            if server.name !== 'admin'
-                li.server #{server.name}
-                    form(action="/schedules/" + server.id + "/delete", method="post")
-                        input.delete(type="submit" value="Delete")
+    //- strong Servers Name
+    //- ul.server-list
+    //-     each server in servers
+    //-         if server.name !== 'admin'
+    //-             li.server #{server.name}
+    //-                 form(action="/schedules/" + server.id + "/delete", method="post")
+    //-                     input.delete(type="submit" value="Delete")

@@ -22,22 +22,12 @@ block content
         tbody
             tr
                 td 11:10 am
-                td 
-                td Howard
-                td Howard
-                td Ushma
-                td Ushma
-                td Ushma
-                td Steve
+                each name in data.lunch.first
+                    td #{name}
             tr
                 td 12:00 am
-                td 
-                td Young
-                td Young
-                td Deanna
-                td Deanna
-                td Howard
-                td Young
+                each name in data.lunch.second
+                    td #{name}
             tr.lunch
                 td &emsp;&emsp;&emsp;
                 td &emsp;&emsp;&emsp;
@@ -85,37 +75,17 @@ block content
                 td &emsp;&emsp;&emsp;
             tr
                 td 4:40 pm
-                td Ushma
-                td Howard
-                td Howard
-                td Ushma
-                td Ushma
-                td Ushma
-                td Steve
+                each name in data.dinner.first
+                    td #{name}
             tr
                 td 5:00 pm
-                td Young
-                td Young
-                td Young
-                td Deanna
-                td Deanna
-                td Steve
-                td Young
+                each name in data.dinner.second
+                    td #{name}
             tr
                 td 5:15 pm
-                td Deanna
-                td 
-                td 
-                td 
-                td Young
-                td Howard
-                td Deanna
+                each name in data.dinner.third
+                    td #{name}
             tr
                 td 5:30 pm
-                td Howard
-                td 
-                td 
-                td 
-                td 
-                td Young
-                td Howard
+                each name in data.dinner.fourth
+                    td #{name}
