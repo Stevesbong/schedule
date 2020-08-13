@@ -30,7 +30,6 @@ function getSchedule() {
 }
 
 async function updateSchedule(data) {
-    console.log(data, 'data came')
     const schedule = await getSchedule();
     schedule.lunch.first = data.lunchFirst
     schedule.lunch.second = data.lunchSecond
