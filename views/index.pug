@@ -57,13 +57,13 @@ block content
                 td &emsp;&emsp;&emsp;
             tr.lunch
                 td &emsp;&emsp;&emsp;
-                td &emsp;&emsp;&emsp;
-                td &emsp;&emsp;&emsp;
-                td &emsp;B&emsp;
-                td &emsp;R&emsp;
+                td &emsp;B&emsp;&emsp;
+                td &emsp;R&emsp;&emsp;
                 td &emsp;E&emsp;
                 td &emsp;A&emsp;
                 td &emsp;K&emsp;
+                td &emsp;&emsp;
+                td &emsp;&emsp;
             tr.lunch
                 td &emsp;&emsp;&emsp;
                 td &emsp;&emsp;&emsp;
@@ -73,6 +73,10 @@ block content
                 td &emsp;&emsp;&emsp;
                 td &emsp;&emsp;&emsp;
                 td &emsp;&emsp;&emsp;
+            tr
+                td 3:00 pm
+                each name in data.dinner.fifth
+                    td #{name}
             tr
                 td 4:40 pm
                 each name in data.dinner.first
